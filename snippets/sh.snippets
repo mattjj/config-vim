@@ -1,0 +1,12 @@
+snippet usage
+	usage() 
+	{
+		echo "usage: ${${1:0##*/}} ${2:args}"
+	}
+	
+	if [ $# -ne ${3:1} ]
+	then
+		usage
+		exit 0
+	fi
+

@@ -1,0 +1,18 @@
+\documentclass{article}
+
+\RequirePackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\RequirePackage{algorithm,algorithmic,amsfonts,amsmath,amssymb,amsthm,array,array,cite,color,enumitem,eqparbox,pdfsync,tabularx,url}
+\RequirePackage[width=0.7\textwidth]{caption}
+\RequirePackage[tight]{subfig}
+\RequirePackage{mysymbols}
+
+\setlength{\parskip}{0.25in}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+
+
+\end{document}
+
+# cursor: 14 del
