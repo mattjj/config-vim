@@ -2,8 +2,17 @@
 set nocompatible
 
 """ Vundle stuff
-" to set up vundle: 
+" to set up vundle the first time: 
 " git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -11,12 +20,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " git repos
+" NOTE: for command-T, must cd bundle/Command-T/ && rake make (make sure correct rake version)
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-vividchalk'
 Bundle 'ervandew/supertab'
 Bundle 'wincent/Command-T'
+Bundle 'kana/vim-arpeggio.git'
 Bundle 'mileszs/ack.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'fs111/pydoc.vim'
@@ -31,46 +43,59 @@ Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'majutsushi/tagbar'
-Bundle 'ivanov/vim-ipython'
 Bundle 'docunext/closetag.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'spiiph/vim-space'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'wgibbs/vim-irblack'
 
 " vim-scripts repos
 Bundle 'TaskList.vim'
 Bundle 'The-NERD-tree'
 Bundle 'UltiSnips'
 Bundle 'LaTeX-Box'
+Bundle 'SearchComplete'
+Bundle 'ShowMarks7'
+Bundle 'bufkill.vim'
 
-" my stuff
-"Static 'python_general'
-" Static 'latex_general'
-" Static 'templates'
-" Static 'mlint'
-" Static 'syntastic-supplement'
+" in case using vim-update-bundles instead of vundle, mark some static
+" TODO maybe these shouldnt be in the bundle directory...
+" Static latex_general
+" Static python_general
+" Static mlint
+" Static syntastic-supplement
+" Static vim-ipython
 
-" To disable a plugin, add it's bundle name to the following list
-"let g:pathogen_disabled = ['easygrep', 'tagbar'] " easygrep makes startup slow and I don't use it much
-"
-"if v:version < '703' || !has('python')
-"    call add(g:pathogen_disabled, 'gundo')
-"    call add(g:pathogen_disabled, 'python_vim_ipython')
-"endif
-"if !has('ruby')
-"    call add(g:pathogen_disabled, 'command-t')
-"endif
-"
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
+" To disable a plugin, add its bundle name to the following list
+let g:pathogen_disabled = ['easygrep', 'tagbar'] " easygrep makes startup slow and I don't use it much
+
+if v:version < '703' || !has('python')
+    call add(g:pathogen_disabled, 'gundo')
+    call add(g:pathogen_disabled, 'python_vim_ipython')
+endif
+
+if !has('ruby')
+    call add(g:pathogen_disabled, 'command-t')
+endif
+
+" plugin options
+let g:syntastic_enable_signs=1
+map <leader>td <Plug>TaskList
+map <leader>g :GundoToggle<CR>
+nmap <silent> <Leader>o :CommandT<CR>
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:showmarks_textlower="\t"
+let g:showmarks_textupper="\t"
+let g:showmarks_textother="\t"
+let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.'`^<>"
 
 """ Now the general stuff!
 
 filetype plugin indent on
 
-" Move this somewhere
-let g:syntastic_enable_signs=1
-map <leader>td <Plug>TaskList
-map <leader>g :GundoToggle<CR>
-nmap <silent> <Leader>o :CommandT<CR>
-
+if filereadable(expand("~/.vimrc_specific"))
+    source ~/.vimrc_specific
+endif
 
 " all movement keys will move the the next line when at last character
 set whichwrap=b,s,h,l,~,[,],<,>
@@ -154,8 +179,9 @@ if has("autocmd")
       endif
   endfunction
 
+  " TODO are these necessary?
   autocmd FileType html let b:closetag_html_style=1
-  autocmd FileType html source ~/.vim/bundle/closetag/plugin/closetag.vim
+  autocmd FileType html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -167,8 +193,6 @@ if has("autocmd")
   
   autocmd bufwritepost .vimrc source $MYVIMRC
   
-  au BufRead *.html,*.erb source ~/.vim/scripts/closetag.vim
-
   augroup END
 
   " the <CR> nohlsearch mapping needs to be fixed so that <CR> will execute
@@ -178,13 +202,18 @@ if has("autocmd")
     au CmdwinEnter * nunmap <CR>
     au CmdwinLeave * nmap <CR> :nohlsearch<CR>/<BS>
   augroup END
+
+  augroup templates
+    au!
+    au BufNewFile * silent! 0r ~/.vim/templates/%:e
+  augroup END
 else
   set autoindent
 endif
   
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | set fdl=99 | wincmd p | diffthis | set fdl=99
 
 " \r := save the current file, chmod it +x, and run it
 noremap \r :w<CR>:!chmod u+x %<CR>:!./%<CR>
@@ -198,25 +227,12 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" Bind C-j to escape
+" Bind some stuff to escape
+inoremap jj <ESC>
 inoremap <C-j> <ESC>
 cnoremap <C-j> <ESC>
 nnoremap <C-j> <ESC>
 vnoremap <C-j> <ESC>
-
-"" Just a few emacs bindings...
-"vnoremap <C-A> <Home>
-"vnoremap <C-E> <End>
-"inoremap <C-A> <Home>
-"inoremap <C-E> <End> " this messes with ending completion
-"cnoremap <C-A> <Home>
-"cnoremap <C-E> <End>
-"" back one character
-"cnoremap <C-B>         <Left>
-"" delete character under cursor
-"cnoremap <C-D>         <Del>
-"" forward one character
-"cnoremap <C-F>         <Right>
 
 " Bindings for tabbed editing
 "noremap <C-n> :tabnew<CR>
@@ -238,13 +254,20 @@ set ruler
 abbreviate teh the
 
 " fonts and colors
-colorscheme slate
+" colorscheme slate
+" silent! colorscheme customslate
+let g:solarized_visibility = "normal" 
+let g:solarized_contrast = "high" 
+colorscheme solarized 
 silent! set gfn=Inconsolata:h14
-silent! colorscheme customslate
+
+set list
+set listchars=eol:¬,extends:»,tab:▸\ ,trail:›
 
 " fold stuff
 set fdo=hor,insert,search,undo,tag
 set fdl=99
+set fdm=manual
 
 " sets w!! to sudo write
 cmap w!! w !sudo tee % > /dev/null
@@ -305,10 +328,13 @@ nnoremap <C-K> :call g:ToggleNuMode()<cr>
 
 " mmm transparency
 if has("gui_macvim")
-    set transparency=3
+    " set transparency=3
     set guioptions-=T
 endif
 
-" don't unload buffers when they are abandoned; keep them open!
-set hid
+" in bash vi mode, a "v" in command mode starts a vim session that gets
+" executed on leave. this makes sure syntax highlighting works there.
+if expand('%:t') =~?'bash-fc-\d\+'
+  setfiletype sh
+endif
 

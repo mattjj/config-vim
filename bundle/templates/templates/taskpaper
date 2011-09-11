@@ -1,8 +1,0 @@
-\td     Mark task as done
-\tc     Show all tasks with context under cursor
-\ts     Scrape all @done tasks into a .done file
-\tp     Fold all projects
-\ta     Show all projects and tasks
-
-
-cursor: 7 del
