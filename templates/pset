@@ -1,0 +1,21 @@
+\documentclass{article}
+\RequirePackage{mit-pset}
+
+\setname{Matthew Johnson}
+\setcourse{}
+\setterm{}
+\setpset{}
+
+\begin{document}
+
+\header
+
+\begin{problem}
+\begin{enum}
+    \item 
+\end{enum}
+\end{problem}
+
+\end{document}
+
+
