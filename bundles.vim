@@ -60,7 +60,6 @@ Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'wincent/Command-T'
 
 " vim-scripts repos
-Bundle 'TaskList.vim'
 Bundle 'The-NERD-tree'
 Bundle 'UltiSnips'
 Bundle 'LaTeX-Box'
