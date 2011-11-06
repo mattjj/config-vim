@@ -284,9 +284,6 @@ cmap w!! w !sudo tee % > /dev/null
 " auto-read changed buffers from disk
 set autoread
 
-" ignore stuff to ignore
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-
 " open definition in a new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " open definition in new veritcal split
