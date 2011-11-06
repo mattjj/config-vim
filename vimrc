@@ -20,7 +20,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " git repos
-" NOTE: for command-T, must cd bundle/Command-T/ && rake make (make sure correct rake version)
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -33,7 +32,7 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-afterimage'
 Bundle 'ervandew/supertab'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 Bundle 'kana/vim-arpeggio'
 Bundle 'mileszs/ack.vim'
 Bundle 'sjl/gundo.vim'
@@ -56,6 +55,9 @@ Bundle 'ervandew/screen'
 Bundle 'godlygeek/tabular'
 Bundle 'ivanov/vim-ipython'
 Bundle 'kien/rainbow_parentheses.vim'
+" NOTE: for command-T, must cd bundle/Command-T/ && rake make (make sure correct rake version)
+" removed in favor of ctrlp
+" Bundle 'wincent/Command-T'
 
 " vim-scripts repos
 Bundle 'TaskList.vim'
@@ -67,20 +69,11 @@ Bundle 'bufkill.vim'
 Bundle 'LustyJuggler'
 Bundle 'current-func-info.vim'
 
-" in case using vim-update-bundles instead of vundle, mark some static
-" TODO maybe these shouldnt be in the bundle directory...
-" Static latex_general
-" Static python_general
-" Static mlint
-" Static syntastic-supplement
-" Static vim-ipython
-
 " To disable a plugin, add its bundle name to the following list
-let g:pathogen_disabled = ['easygrep']
+let g:pathogen_disabled = ['easygrep','vim-ipython']
 
 if v:version < '703' || !has('python')
     call add(g:pathogen_disabled, 'gundo')
-    call add(g:pathogen_disabled, 'python_vim_ipython')
 endif
 
 if !has('ruby')
@@ -95,7 +88,7 @@ endif
 let g:syntastic_enable_signs=1
 map <leader>td <Plug>TaskList
 map <leader>g :GundoToggle<CR>
-nmap <silent> <Leader>o :CommandT<CR>
+" nmap <silent> <Leader>o :CommandT<CR>
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 let g:showmarks_enable=0 " use \mt to toggle
 let g:showmarks_textlower="\t"
@@ -106,6 +99,7 @@ let g:LatexBox_latexmk_options = '-pvc'
 nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
+let g:ctrlp_working_path_mode = 2
 
 """ Now the general stuff!
 
@@ -178,48 +172,53 @@ let g:tex_flavor='latex'
 " show matching parens, brackets
 set showmatch
 
+" change pwd to mru file/buffer
 set autochdir
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-  "
-  " adds execute permissions if file starts with appropriate shebang
-  autocmd BufWritePost * call NoExtNewFile()
-  function! NoExtNewFile()
-      if getline(1) =~ "^#!.*/bin/"
-          if &filetype == ""
-              filetype detect
-          endif
-          silent !chmod a+x <afile>
-      endif
-  endfunction
+    augroup ctrlp
+        au!
+        au BufEnter * cal ctrlp#SetWorkingPath(2)
+    augroup END
 
-  " TODO are these necessary?
-  autocmd FileType html let b:closetag_html_style=1
-  autocmd FileType html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+    augroup vimrcEx
+        au!
+        "
+        " adds execute permissions if file starts with appropriate shebang
+        autocmd BufWritePost * call NoExtNewFile()
+        function! NoExtNewFile()
+            if getline(1) =~ "^#!.*/bin/"
+                if &filetype == ""
+                    filetype detect
+                endif
+                silent !chmod a+x <afile>
+            endif
+        endfunction
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+        " TODO are these necessary?
+        autocmd FileType html let b:closetag_html_style=1
+        autocmd FileType html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
-  autocmd bufwritepost .vimrc source $MYVIMRC
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it when the position is invalid or when inside an event handler
+        " (happens when dropping a file on gvim).
+        autocmd BufReadPost *
+                    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                    \   exe "normal! g`\"" |
+                    \ endif
 
-  augroup END
+        autocmd bufwritepost .vimrc source $MYVIMRC
 
-  augroup templates
-    au!
-    au BufNewFile * silent! 0r ~/.vim/templates/%:e
-    au BufNewFile * if @% =~? 'pset' | silent! 0r ~/.vim/templates/pset | endif
-  augroup END
+    augroup END
+
+    augroup templates
+        au!
+        au BufNewFile * silent! 0r ~/.vim/templates/%:e
+        au BufNewFile * if @% =~? 'pset' | silent! 0r ~/.vim/templates/pset | endif
+    augroup END
 else
-  set autoindent
+    set autoindent
 endif
 
 " Convenient command to see the difference between the current buffer and the
@@ -282,7 +281,11 @@ set fdm=manual
 " sets w!! to sudo write
 cmap w!! w !sudo tee % > /dev/null
 
+" auto-read changed buffers from disk
 set autoread
+
+" ignore stuff to ignore
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 " open definition in a new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -340,16 +343,19 @@ endfunc
 nnoremap <C-K> :call g:ToggleNuMode()<cr>
 vnoremap <C-K> :call g:ToggleNuMode()<cr>
 
-" mmm transparency
 if has("gui_macvim")
+    " transparency
     " set transparency=3
+    " don't show toolbar buttons
     set guioptions-=T
+    " always show tab bar (so windows don't resize with just one tab open)
+    set showtabline=2
 endif
 
 " in bash vi mode, a "v" in command mode starts a vim session that gets
 " executed on leave. this makes sure syntax highlighting works there.
 if expand('%:t') =~?'bash-fc-\d\+'
-  setfiletype sh
+    setfiletype sh
 endif
 
 " status line
