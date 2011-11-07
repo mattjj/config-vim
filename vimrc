@@ -206,8 +206,7 @@ abbreviate teh the
 let g:solarized_visibility = "normal" 
 let g:solarized_contrast = "high" 
 set background=dark
-colorscheme solarized 
-silent! set gfn=Inconsolata:h14
+colorscheme solarized
 
 set list
 set listchars=extends:»,tab:▸\ ,trail:›
@@ -281,6 +280,7 @@ nnoremap <C-K> :call g:ToggleNuMode()<cr>
 vnoremap <C-K> :call g:ToggleNuMode()<cr>
 
 if has("gui_macvim")
+    silent! set gfn=Inconsolata:h14
     " transparency
     " set transparency=3
     " don't show toolbar buttons
