@@ -53,7 +53,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'wgibbs/vim-irblack'
 Bundle 'ervandew/screen'
 Bundle 'godlygeek/tabular'
-Bundle 'ivanov/vim-ipython'
+" Bundle 'ivanov/vim-ipython'
 Bundle 'kien/rainbow_parentheses.vim'
 " NOTE: for command-T, must cd bundle/Command-T/ && rake make (make sure correct rake version)
 " removed in favor of ctrlp

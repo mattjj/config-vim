@@ -6,7 +6,7 @@ endif
 """ Plugin-specific stuff
 
 " To disable a plugin, add its bundle name to the following list
-let g:pathogen_disabled = ['easygrep','vim-ipython']
+let g:pathogen_disabled = ['easygrep']
 
 if v:version < '703' || !has('python')
     call add(g:pathogen_disabled, 'gundo')
@@ -108,6 +108,12 @@ set showmatch
 
 " change pwd to mru file/buffer
 set autochdir
+
+" use hidden buffers
+set hid
+
+" ignore some stuff. ctrlp didn't like ignoring .git though.
+set wildignore+=*/.hg/*,*/.svn/*
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
