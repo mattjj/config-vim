@@ -112,6 +112,9 @@ set autochdir
 " use hidden buffers
 set hid
 
+" use mouse
+set mouse=a
+
 " ignore some stuff. ctrlp didn't like ignoring .git though.
 set wildignore+=*/.hg/*,*/.svn/*
 
