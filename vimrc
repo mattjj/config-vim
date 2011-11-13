@@ -36,6 +36,7 @@ nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
 let g:ctrlp_working_path_mode = 2
+" let g:pad_dir='~/.notes/'
 
 """ Now the general stuff!
 
@@ -125,9 +126,8 @@ if has("autocmd")
         au BufEnter * cal ctrlp#SetWorkingPath(2)
     augroup END
 
-    augroup vimrcEx
+    augroup executePermissions
         au!
-        "
         " adds execute permissions if file starts with appropriate shebang
         autocmd BufWritePost * call NoExtNewFile()
         function! NoExtNewFile()
@@ -138,11 +138,16 @@ if has("autocmd")
                 silent !chmod a+x <afile>
             endif
         endfunction
+    augroup END
 
-        " TODO are these necessary?
+    augroup htmlTags
+        au!
         autocmd FileType html let b:closetag_html_style=1
         autocmd FileType html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+    augroup End
 
+    augroup vimStuff
+        au!
         " When editing a file, always jump to the last known cursor position.
         " Don't do it when the position is invalid or when inside an event handler
         " (happens when dropping a file on gvim).
@@ -152,7 +157,6 @@ if has("autocmd")
                     \ endif
 
         autocmd bufwritepost .vimrc source $MYVIMRC
-
     augroup END
 
     augroup templates

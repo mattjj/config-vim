@@ -55,7 +55,9 @@ Bundle 'ervandew/screen'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'fmoralesc/vim-pad'
 " Bundle 'ivanov/vim-ipython'
+"
 " NOTE: for command-T, must cd bundle/Command-T/ && rake make (make sure correct rake version)
 " removed in favor of ctrlp
 " Bundle 'wincent/Command-T'
@@ -69,4 +71,6 @@ Bundle 'bufkill.vim'
 Bundle 'LustyJuggler'
 Bundle 'current-func-info.vim'
 Bundle 'bufkill.vim'
+Bundle 'pyrex.vim'
+
 filetype plugin indent on
