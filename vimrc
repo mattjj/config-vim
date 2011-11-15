@@ -112,8 +112,8 @@ set showmatch
 " change pwd to mru file/buffer
 set autochdir
 
-" use hidden buffers
-set hid
+" do not use hidden buffers
+set nohid
 
 " use mouse
 set mouse=a
@@ -179,6 +179,9 @@ noremap \r :w<CR>:!chmod u+x %<CR>:!./%<CR>
 
 " run make
 map <buffer> \m :w<CR>:!make<CR>
+
+" yank to end of line
+nmap Y y$
 
 " wrap when moving left or right
 nnoremap j gj
