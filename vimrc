@@ -31,7 +31,6 @@ let g:showmarks_textlower="\t"
 let g:showmarks_textupper="\t"
 let g:showmarks_textother="\t"
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.'`^<>"
-let g:LatexBox_latexmk_options = '-pvc'
 nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
@@ -123,11 +122,6 @@ set wildignore+=*/.hg/*,*/.svn/*
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-    augroup ctrlp
-        au!
-        au BufEnter * cal ctrlp#SetWorkingPath(2)
-    augroup END
-
     augroup executePermissions
         au!
         " adds execute permissions if file starts with appropriate shebang
