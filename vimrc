@@ -54,9 +54,12 @@ if &t_Co > 2 || has("gui_running")
     set number
 endif
 
+" and I type fast
+set timeoutlen=300
+
 " turn on hlsearch, but make it go away when I want
 set hls
-nmap <leader><space> :set nohlsearch<CR>/<BS>
+nmap <space><space> :noh<CR>/<BS>
 
 " show command as I'm typing it
 set showcmd
@@ -176,6 +179,11 @@ map <buffer> \m :w<CR>:!make<CR>
 
 " yank to end of line
 nmap Y y$
+
+" cursorline
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 
 " wrap when moving left or right
 nnoremap j gj
