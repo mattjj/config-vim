@@ -5,21 +5,7 @@ endif
 
 """ Plugin-specific stuff
 
-" To disable a plugin, add its bundle name to the following list
-let g:pathogen_disabled = ['easygrep']
-
-if v:version < '703' || !has('python')
-    call add(g:pathogen_disabled, 'gundo')
-endif
-
-if !has('ruby')
-    call add(g:pathogen_disabled, 'command-t')
-endif
-
-if has("gui_running")
-    call add(g:pathogen_disabled, 'ShowMarks7')
-endif
-
+" TODO move these to files
 " plugin options
 let g:syntastic_enable_signs=1
 map <leader>td <Plug>TaskList

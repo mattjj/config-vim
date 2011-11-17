@@ -1,7 +1,7 @@
 " vi? This is VIMMMMMMMMMMMMMM
 set nocompatible
 
-""" Vundle stuff
+""" Vundle plugin management
 " to set up vundle the first time: 
 " git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
@@ -20,62 +20,64 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " git repos
-" NOTE: Tim Pope is my hero
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-afterimage'
-Bundle 'ervandew/supertab'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kana/vim-arpeggio'
-Bundle 'mileszs/ack.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'fs111/pydoc.vim'
-Bundle 'vim-scripts/pep8'
 Bundle 'alfredodeza/pytest.vim'
-Bundle 'sontek/rope-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'mitechie/pyflakes-pathogen'
-Bundle 'edsono/vim-matchit'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'majutsushi/tagbar'
-Bundle 'docunext/closetag.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'spiiph/vim-space'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'wgibbs/vim-irblack'
+Bundle 'docunext/closetag.vim'
+Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/screen'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'ervandew/supertab'
 Bundle 'fmoralesc/vim-pad'
+Bundle 'fs111/pydoc.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'kana/vim-arpeggio'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'majutsushi/tagbar'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'mileszs/ack.vim'
+Bundle 'mitechie/pyflakes-pathogen'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/syntastic'
+Bundle 'sontek/rope-vim'
+Bundle 'spiiph/vim-space'
+" NOTE: Tim Pope is my hero
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-afterimage'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-scripts/pep8'
+Bundle 'wgibbs/vim-irblack'
 " Bundle 'ivanov/vim-ipython'
-"
-" NOTE: for command-T, must cd bundle/Command-T/ && rake make (make sure correct rake version)
-" removed in favor of ctrlp
-" Bundle 'wincent/Command-T'
 
 " vim-scripts repos
+Bundle 'bufkill.vim'
+Bundle 'bufkill.vim'
+Bundle 'current-func-info.vim'
+Bundle 'LaTeX-Box'
+Bundle 'LustyJuggler'
+Bundle 'pyrex.vim'
 Bundle 'The-NERD-tree'
 Bundle 'UltiSnips'
-Bundle 'LaTeX-Box'
-Bundle 'ShowMarks7'
-Bundle 'bufkill.vim'
-Bundle 'LustyJuggler'
-Bundle 'current-func-info.vim'
-Bundle 'bufkill.vim'
-Bundle 'pyrex.vim'
 
 " my bundles
 " keeping vim-prefs as a separate bundle is needed until vundle works out its
 " Bundle! command
 Bundle 'ssh://173.255.229.4/srv/git/matts-vim-prefs.git'
+
+" conditional bundles
+if !has("gui_running")
+    Bundle 'ShowMarks7'
+endif
+if v:version >= '703' && has('python')
+    Bundle 'sjl/gundo.vim'
+endif
 
 filetype plugin indent on
