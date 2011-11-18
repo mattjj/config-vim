@@ -76,7 +76,7 @@ Bundle 'ssh://173.255.229.4/srv/git/matts-vim-prefs.git'
 if !has("gui_running")
     Bundle 'ShowMarks7'
 endif
-if v:version >= '703' && has('python')
+if 0 && v:version >= '703' && has('python')
     Bundle 'sjl/gundo.vim'
 endif
 

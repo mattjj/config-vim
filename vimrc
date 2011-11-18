@@ -5,12 +5,13 @@ endif
 
 """ Plugin-specific stuff
 
-" TODO move these to files
+" TODO move these to files, either in my own preferences repo or in my own
+" 'master' versions of the sub-repos. the former would probably be easier to
+" maintain
 " plugin options
 let g:syntastic_enable_signs=1
 map <leader>td <Plug>TaskList
 map <leader>g :GundoToggle<CR>
-" nmap <silent> <Leader>o :CommandT<CR>
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 let g:showmarks_enable=0 " use \mt to toggle
 let g:showmarks_textlower="\t"
