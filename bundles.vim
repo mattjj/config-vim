@@ -61,7 +61,6 @@ Bundle 'bufkill.vim'
 Bundle 'bufkill.vim'
 Bundle 'current-func-info.vim'
 Bundle 'LaTeX-Box'
-Bundle 'LustyJuggler'
 Bundle 'pyrex.vim'
 Bundle 'The-NERD-tree'
 Bundle 'UltiSnips'
@@ -75,9 +74,14 @@ Bundle 'ssh://173.255.229.4/srv/git/matts-vim-prefs.git'
 if !has("gui_running")
     Bundle 'ShowMarks7'
 endif
-if 0 && v:version >= '703' && has('python')
+
+if v:version >= '703' && has('python')
     Bundle 'sjl/gundo.vim'
     Bundle 'fmoralesc/vim-pad'
+endif
+
+if has('ruby')
+    Bundle 'LustyJuggler'
 endif
 
 filetype plugin indent on
