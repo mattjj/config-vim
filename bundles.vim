@@ -26,7 +26,6 @@ Bundle 'docunext/closetag.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/screen'
 Bundle 'ervandew/supertab'
-Bundle 'fmoralesc/vim-pad'
 Bundle 'fs111/pydoc.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'kana/vim-arpeggio'
@@ -78,6 +77,7 @@ if !has("gui_running")
 endif
 if 0 && v:version >= '703' && has('python')
     Bundle 'sjl/gundo.vim'
+    Bundle 'fmoralesc/vim-pad'
 endif
 
 filetype plugin indent on
