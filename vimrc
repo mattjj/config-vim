@@ -215,8 +215,7 @@ set listchars=extends:»,tab:▸\ ,trail:›
 
 " fold stuff
 set fdo=hor,insert,search,undo,tag
-set fdl=99
-set fdm=manual
+set fdm=marker
 
 " sets w!! to sudo write
 cmap w!! w !sudo tee % > /dev/null
