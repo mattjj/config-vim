@@ -310,3 +310,12 @@ set ruler                   " Show some info, even without statuslines.
 set laststatus=2            " Always show statusline, even if only 1 window.
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 
+" new, experimental, and in need of organization
+set ttyfast
+set backspace=indent,eol,start
+set undoreload=10000
+set history=1000
+set fillchars=diff:⣿
+set splitright
+set splitbelow
+
