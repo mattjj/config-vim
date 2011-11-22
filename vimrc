@@ -22,9 +22,13 @@ nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
 let g:ctrlp_working_path_mode = 2
-let g:pad_use_default_mappings=0
+if !has('gui_running')
+    " vim-pad wants to use <leader>n for <Plug>PadOpenPad in the terminal, but
+    " I use that for :cn so I'll just disable all mappings
+    let g:pad_use_default_mappings=0
+endif
 let g:pad_dir=expand("~/.notes/")
-let g:pad_window_height=10
+let g:pad_window_height=30
 
 """ Now the general stuff!
 
