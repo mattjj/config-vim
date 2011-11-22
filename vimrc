@@ -204,6 +204,10 @@ set ruler
 
 " correct my common typos
 abbreviate teh the
+abbreviate ot to
+abbreviate tableflip (╯°□°）╯︵ ┻━┻
+abbreviate tablefix ┬──┬ ノ( ゜-゜ノ)
+abbreviate lod ಠ_ಠ
 
 " fonts and colors
 " colorscheme slate
