@@ -220,6 +220,7 @@ set listchars=extends:»,tab:▸\ ,trail:›
 " fold stuff
 set fdo=hor,insert,search,undo,tag
 set fdm=marker
+set foldlevelstart=0
 
 " sets w!! to sudo write
 cmap w!! w !sudo tee % > /dev/null
@@ -315,7 +316,6 @@ set ttyfast
 set backspace=indent,eol,start
 set undoreload=10000
 set history=1000
-set fillchars=diff:⣿
 set splitright
 set splitbelow
 
