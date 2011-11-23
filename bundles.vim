@@ -39,7 +39,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
-Bundle 'sontek/rope-vim'
 Bundle 'spiiph/vim-space'
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-abolish'

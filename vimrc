@@ -321,5 +321,4 @@ set backspace=indent,eol,start
 set undoreload=10000
 set history=1000
 set splitright
-set splitbelow
 
