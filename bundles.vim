@@ -68,7 +68,7 @@ Bundle 'Rename'
 " my bundles
 " keeping vim-prefs as a separate bundle is needed until vundle works out its
 " Bundle! command
-Bundle 'ssh://173.255.229.4/srv/git/matts-vim-prefs.git'
+Bundle 'ssh://mattjj@173.255.229.4/srv/git/matts-vim-prefs.git'
 
 " conditional bundles
 if !has("gui_running")
