@@ -80,6 +80,7 @@ set directory=~/.vim/swap//
 if v:version >= '703'
     set undodir=~/.vim/undo//
     set undofile
+    set undoreload=10000
 endif
 
 " Set up Printer options
@@ -318,7 +319,6 @@ set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 " new, experimental, and in need of organization
 set ttyfast
 set backspace=indent,eol,start
-set undoreload=10000
 set history=1000
 set splitright
 
