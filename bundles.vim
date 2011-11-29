@@ -63,6 +63,7 @@ Bundle 'LaTeX-Box'
 Bundle 'pyrex.vim'
 Bundle 'The-NERD-tree'
 Bundle 'UltiSnips'
+Bundle 'Rename'
 
 " my bundles
 " keeping vim-prefs as a separate bundle is needed until vundle works out its
