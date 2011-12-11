@@ -248,6 +248,8 @@ set grepprg="ack"
 
 " set completion to show a preview window
 set cot=menu,preview,menuone
+autocmd CursorMovedI * if pumvisible() == 0 | pclose | endif
+autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 " use blowfish encryption with :X
 if v:version >= '703'
@@ -321,4 +323,7 @@ set ttyfast
 set backspace=indent,eol,start
 set history=1000
 set splitright
+" this makes help appear on the bottom, which is annoying, but it also makes
+" omnicomplete previews appear on the bottom, which i like
+set splitbelow
 

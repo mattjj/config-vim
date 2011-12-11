@@ -39,7 +39,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
-Bundle 'spiiph/vim-space'
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-afterimage'
@@ -64,6 +63,7 @@ Bundle 'pyrex.vim'
 Bundle 'The-NERD-tree'
 Bundle 'UltiSnips'
 Bundle 'Rename'
+Bundle 'PySmell'
 
 " my bundles
 " keeping vim-prefs as a separate bundle is needed until vundle works out its
@@ -83,5 +83,8 @@ endif
 if has('ruby')
     Bundle 'LustyJuggler'
 endif
+
+" bundles i haven't figured out but may be worth learning
+" Bundle 'spiiph/vim-space'
 
 filetype plugin indent on
