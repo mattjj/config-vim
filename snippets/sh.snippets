@@ -1,5 +1,5 @@
 snippet usage
-usage() 
+usage()
 {
     echo "usage: ${0##*/} ${2:args}"
 }
@@ -10,4 +10,8 @@ then
     exit 0
 fi
 
+endsnippet
+
+snippet IFS
+IFS=$(echo -en "\n\b")
 endsnippet

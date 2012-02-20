@@ -22,13 +22,9 @@ nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
 let g:ctrlp_working_path_mode = 2
-if !has('gui_running')
-    " vim-pad wants to use <leader>n for <Plug>PadOpenPad in the terminal, but
-    " I use that for :cn so I'll just disable all mappings
-    let g:pad_use_default_mappings=0
-endif
-let g:pad_dir=expand("~/.notes/")
-let g:pad_window_height=30
+nmap <c-b> :CtrlPBuffer<CR>
+" let g:pad_dir=expand("~/.notes/")
+" let g:pad_window_height=30
 
 """ Now the general stuff!
 
@@ -106,11 +102,24 @@ set showmatch
 " change pwd to mru file/buffer
 set autochdir
 
-" do not use hidden buffers
-set nohid
+" use hidden buffers? i keep changing my mind
+" set nohid
+set hid
 
 " use mouse
-set mouse=a
+if has('mouse')
+  set mouse=a
+  " if &term =~ "xterm" || &term =~ "screen"
+  "   " for some reason, doing this directly with 'set ttymouse=xterm2'
+  "   " doesn't work -- 'set ttymouse?' returns xterm2 but the mouse
+  "   " makes tmux enter copy mode instead of selecting or scrolling
+  "   " inside Vim -- but luckily, setting it up from within autocmds
+  "   " works
+  "   autocmd VimEnter * set ttymouse=xterm2
+  "   autocmd FocusGained * set ttymouse=xterm2
+  "   autocmd BufEnter * set ttymouse=xterm2
+  " endif
+endif
 
 " ignore some stuff. ctrlp didn't like ignoring .git though.
 set wildignore+=*/.hg/*,*/.svn/*
@@ -175,7 +184,6 @@ nmap Y y$
 " cursorline
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
 
 " wrap when moving left or right
 nnoremap j gj
@@ -191,6 +199,12 @@ Arpeggio inoremap jk <ESC>
 "noremap <C-n> :tabnew<CR>
 noremap <C-l> :tabnext<CR>
 noremap <C-h> :tabNext<CR>
+
+" Bindings for windows
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
 
 " Make tabs work how I like them: made of 4 spaces
 set expandtab
@@ -248,8 +262,9 @@ set grepprg="ack"
 
 " set completion to show a preview window
 set cot=menu,preview,menuone
-autocmd CursorMovedI * if pumvisible() == 0 | pclose | endif
-autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
+" TODO these break in command-line window
+"autocmd CursorMovedI * if pumvisible() == 0 | pclose | endif
+"autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 " use blowfish encryption with :X
 if v:version >= '703'
@@ -292,7 +307,7 @@ nnoremap <C-K> :call g:ToggleNuMode()<cr>
 vnoremap <C-K> :call g:ToggleNuMode()<cr>
 
 if has("gui_macvim")
-    silent! set gfn=Inconsolata:h14
+    silent! set gfn=Inconsolata-g:h12
     " transparency
     " set transparency=3
     " don't show toolbar buttons
@@ -308,13 +323,11 @@ if expand('%:t') =~?'bash-fc-\d\+'
 endif
 
 " status line
-set ls=2                    " allways show status line
 set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
 set confirm                 " Y-N-C prompt if closing with unsaved changes.
 set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
-set ruler                   " Show some info, even without statuslines.
 set laststatus=2            " Always show statusline, even if only 1 window.
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 

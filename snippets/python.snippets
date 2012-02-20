@@ -1,3 +1,99 @@
 snippet pdb
 import pdb; pdb.set_trace()
 endsnippet
+
+# copied global section from UltiSnips/python.snippets so that I can use it
+# here, too
+
+global !p
+
+NORMAL  = 0x1
+DOXYGEN = 0x2
+
+def get_args(arglist):
+    args = [arg.split('=')[0].strip() for arg in arglist.split(',') if arg]
+    args = [arg for arg in args if arg and arg != "self"]
+
+    return args
+
+
+def get_style(snip):
+    style = snip.opt("g:ultisnips_python_style", "normal")
+
+    if    style == "doxygen": return DOXYGEN
+    else: return NORMAL
+
+
+def format_arg(arg, style):
+    if style == DOXYGEN:
+        return "@param %s @todo" % arg
+    elif style == NORMAL:
+        return ":%s: @todo" % arg
+
+
+def format_return(style):
+    if style == DOXYGEN:
+        return "@return: @todo"
+    elif style == NORMAL:
+        return ":returns: @todo"
+
+
+def write_docstring_args(args, snip):
+    if not args:
+        snip.rv += ' """'
+        return
+
+    snip += ""
+
+    style = get_style(snip)
+
+    for arg in args:
+        snip += format_arg(arg, style)
+
+
+def write_init_body(args, parents, snip):
+    parents = [p.strip() for p in parents.split(",")]
+    parents = [p for p in parents if p != 'object']
+
+    for p in parents:
+        snip += p + ".__init__(self)"
+
+    if parents:
+        snip += ""
+
+    for arg in args:
+        snip += "self._%s = %s" % (arg, arg)
+
+# end copied section, now for something of my own...
+
+def write_methods_to_implement(parents,snip):
+    # TODO :)
+    #snip += "hi"
+    pass
+
+endglobal
+
+# that's all the code!
+
+snippet impl "class that implements abstract base class" b
+class ${1:MyClass}(${2:BASECLASS}):
+    """${3:Docstring for $1 }"""
+
+    def __init__(self$4):
+        """${5:@todo: to be defined}`!p
+snip.rv = ""
+snip >> 2
+
+args = get_args(t[4])
+
+write_docstring_args(args, snip)
+if args: snip += '"""'
+
+snip += ""
+write_init_body(args, t[2], snip)
+`
+        ${0}
+`!p
+write_methods_to_implement(t[2],snip)
+`
+endsnippet
