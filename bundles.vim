@@ -39,7 +39,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
-Bundle 'sirver/UltiSnips'
+Bundle 'SirVer/UltiSnips'
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-afterimage'
