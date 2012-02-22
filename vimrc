@@ -319,6 +319,10 @@ if has("gui_macvim")
     set guioptions-=T
     " always show tab bar (so windows don't resize with just one tab open)
     set showtabline=2
+elseif has("gui")
+    silent! set gfm=Droid\ Sans\ Mono\ 12
+    set guioptions-=T
+    set guioptions-=m
 endif
 
 " in bash vi mode, a "v" in command mode starts a vim session that gets
