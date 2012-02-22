@@ -39,7 +39,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/UltiSnips'
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-afterimage'
@@ -63,6 +62,7 @@ Bundle 'LaTeX-Box'
 Bundle 'pyrex.vim'
 Bundle 'The-NERD-tree'
 Bundle 'Rename'
+Bundle 'UltiSnips'
 
 " my bundles
 " keeping vim-prefs as a separate bundle is needed until vundle works out its
