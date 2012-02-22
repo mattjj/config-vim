@@ -220,9 +220,17 @@ set ruler
 " correct my common typos
 abbreviate teh the
 abbreviate ot to
-abbreviate tableflip (╯°□°）╯︵ ┻━┻
-abbreviate tablefix ┬──┬ ノ( ゜-゜ノ)
-abbreviate lod ಠ_ಠ
+if has("multi-byte")
+    abbreviate tableflip (╯°□°）╯︵ ┻━┻
+    abbreviate tablefix ┬──┬ ノ( ゜-゜ノ)
+    abbreviate lod ಠ_ಠ
+
+    set list
+    set listchars=extends:»,tab:▸\ ,trail:›
+    " eol:¬,
+else
+    set nolist
+endif
 
 " fonts and colors
 " colorscheme slate
@@ -232,9 +240,6 @@ let g:solarized_contrast = "high"
 set background=dark
 colorscheme solarized
 
-set list
-set listchars=extends:»,tab:▸\ ,trail:›
-" eol:¬,
 
 " fold stuff
 set fdo=hor,insert,search,undo,tag
