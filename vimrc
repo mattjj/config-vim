@@ -224,7 +224,7 @@ if has("multi-byte")
     abbreviate tableflip (╯°□°）╯︵ ┻━┻
     abbreviate tablefix ┬──┬ ノ( ゜-゜ノ)
     abbreviate lod ಠ_ಠ
-
+elseif (&encoding == "utf-8")
     set list
     set listchars=extends:»,tab:▸\ ,trail:›
     " eol:¬,
