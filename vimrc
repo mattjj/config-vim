@@ -220,7 +220,7 @@ set ruler
 " correct my common typos
 abbreviate teh the
 abbreviate ot to
-if has("multi-byte")
+if has("multi_byte")
     abbreviate tableflip (╯°□°）╯︵ ┻━┻
     abbreviate tablefix ┬──┬ ノ( ゜-゜ノ)
     abbreviate lod ಠ_ಠ
