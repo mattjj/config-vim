@@ -259,7 +259,7 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 "set tags=tags;/
 set tags=./.tags,./tags,tags
 
-set wildmode=full
+set wildmode=longest,list,full
 set wildmenu
 
 set formatprg="par -w"
@@ -293,8 +293,8 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 " vmode indent/dedent preserves selections
-vnoremap <C-Right> >gv
-vnoremap <C-Left> <gv
+vnoremap > >gv
+vnoremap < <gv
 
 " map tag commands to be nicer
 nmap <C-Right> <C-]>
@@ -321,8 +321,7 @@ if has("gui_macvim")
     set showtabline=2
 elseif has("gui")
     silent! set gfm=Droid\ Sans\ Mono\ 12
-    set guioptions-=T
-    set guioptions-=m
+    set guioptions-=Tma
 endif
 
 " in bash vi mode, a "v" in command mode starts a vim session that gets
