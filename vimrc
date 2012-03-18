@@ -23,6 +23,7 @@ nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
 let g:ctrlp_working_path_mode = 2
 nmap <c-b> :CtrlPBuffer<CR>
+nmap <c-u> :CtrlPMRU<CR>
 " let g:pad_dir=expand("~/.notes/")
 " let g:pad_window_height=30
 
