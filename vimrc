@@ -22,7 +22,7 @@ nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
 let g:ctrlp_working_path_mode = 2
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.pyc$'
 nmap <c-b> :CtrlPBuffer<CR>
 nmap <c-s-p> :CtrlPMRU<CR>
 " let g:pad_dir=expand("~/.notes/")
@@ -123,7 +123,7 @@ if has('mouse')
   " endif
 endif
 
-" ignore some stuff. ctrlp didn't like ignoring .git though.
+" ignore some stuff
 set wildignore+=*/.hg/*,*/.svn/*
 
 " Only do this part when compiled with support for autocommands.
