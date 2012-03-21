@@ -24,7 +24,7 @@ let g:LustyJugglerShowKeys = 'a'
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.pyc$'
 nmap <c-b> :CtrlPBuffer<CR>
-nmap <c-m> :CtrlPMRU<CR>
+nmap <c-n> :CtrlPMRU<CR>
 " let g:pad_dir=expand("~/.notes/")
 " let g:pad_window_height=30
 
@@ -124,7 +124,7 @@ if has('mouse')
 endif
 
 " ignore some stuff
-set wildignore+=*/.hg/*,*/.svn/*
+set wildignore+=*/.hg/*,*/.svn/*,*.pyc
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
