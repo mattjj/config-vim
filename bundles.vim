@@ -39,6 +39,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
+Bundle 'suan/vim-instant-markdown'
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-afterimage'
@@ -48,6 +49,7 @@ Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-scripts/pep8'
@@ -63,7 +65,6 @@ Bundle 'Lucius'
 Bundle 'pyrex.vim'
 Bundle 'The-NERD-tree'
 Bundle 'Rename'
-Bundle 'UltiSnips'
 
 " my bundles
 Bundle 'mattjj/vim-prefs'
@@ -75,6 +76,7 @@ endif
 
 if v:version >= '703' && has('python')
     Bundle 'sjl/gundo.vim'
+    Bundle 'UltiSnips'
     " Bundle 'fmoralesc/vim-pad'
 endif
 
