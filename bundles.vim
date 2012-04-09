@@ -86,6 +86,18 @@ endif
 
 " bundles i haven't figured out but may be worth learning
 " Bundle 'spiiph/vim-space'
-Bundle 'rygwdn/rope-omni'
+if has('python')
+python << EOF
+try:
+    import ropevim
+    import vim
+    vim.command(r'let g:has_ropevim=1')
+except ImportError:
+    vim.command(r'let g:has_ropevim=0')
+EOF
+    if g:has_ropevim
+        Bundle 'rygwdn/rope-omni'
+    endif
+endif
 
 filetype plugin indent on
