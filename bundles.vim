@@ -19,7 +19,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" git repos
+" github repos
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'docunext/closetag.vim'
@@ -28,6 +28,7 @@ Bundle 'ervandew/screen'
 Bundle 'ervandew/supertab'
 Bundle 'fs111/pydoc.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'JuliaLang/julia-vim'
 Bundle 'kana/vim-arpeggio'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
