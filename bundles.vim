@@ -88,9 +88,9 @@ endif
 " Bundle 'spiiph/vim-space'
 if has('python')
 python << EOF
+import vim
 try:
     import ropevim
-    import vim
     vim.command(r'let g:has_ropevim=1')
 except ImportError:
     vim.command(r'let g:has_ropevim=0')

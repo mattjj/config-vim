@@ -238,8 +238,9 @@ endif
 " fonts and colors
 " colorscheme slate
 " silent! colorscheme customslate
-let g:solarized_visibility = "normal" 
-let g:solarized_contrast = "high" 
+" let g:solarized_termcolors=256
+let g:solarized_visibility = "normal"
+let g:solarized_contrast = "high"
 set background=dark
 colorscheme solarized
 
