@@ -34,6 +34,8 @@ if filereadable(expand("~/.vimrc_specific"))
     source ~/.vimrc_specific
 endif
 
+nmap <leader>v :tabe ~/.vimrc<CR>
+
 " all movement keys will move the the next line when at last character
 set whichwrap=b,s,h,l,~,[,],<,>
 
