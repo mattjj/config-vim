@@ -244,6 +244,7 @@ let g:solarized_visibility = "normal"
 let g:solarized_contrast = "high" 
 set background=dark
 colorscheme solarized
+set fillchars="fold:"
 
 
 " fold stuff
