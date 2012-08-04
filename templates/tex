@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\RequirePackage[top=1.4in,bottom=1.4in,left=2in,right=2in]{geometry}
+\RequirePackage{subcaption}
+\RequirePackage[labelfont=bf]{caption}
+
+\RequirePackage{amsmath,amsfonts,amssymb,amsthm}
+\RequirePackage{graphicx}
+\RequirePackage[colorlinks=true]{hyperref}
+\RequirePackage{appendix}
+\RequirePackage{url}
+\RequirePackage{natbib}
+
+\newcommand{\T}{\mathsf{T}}
+
+\begin{document}
+    \begin{center}
+        \Large
+        Report\\
+        \vspace{0.2in}
+        \normalsize
+        Matthew James Johnson, MIT\\
+        \vspace{0.1in}
+        \footnotesize
+        Revised \today
+    \end{center}
+
+
+\end{document}
