@@ -163,7 +163,7 @@ if has("autocmd")
 
     augroup templates
         au!
-        au BufNewFile * silent! 0r ~/.vim/templates/%:e
+        au BufNewFile * if !(expand("%:p") =~? 'ipython_edit') | silent! 0r ~/.vim/templates/%:e | endif
         au BufNewFile * if @% =~? 'pset' | silent! 0r ~/.vim/templates/pset | endif
     augroup END
 else
