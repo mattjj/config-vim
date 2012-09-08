@@ -194,6 +194,8 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+" and add virtual columns during visual block
+set ve+=block
 
 " Bind some stuff to escape
 call arpeggio#load()

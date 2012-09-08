@@ -9,7 +9,8 @@
 \RequirePackage[colorlinks=true]{hyperref}
 \RequirePackage{appendix}
 \RequirePackage{url}
-\RequirePackage{natbib}
+\usepackage[backend=biber,url=true,doi=true,eprint=true]{biblatex}
+% \addbibresource{bib.bib}
 
 \newcommand{\T}{\mathsf{T}}
 
@@ -25,5 +26,20 @@
         Revised \today
     \end{center}
 
+
+%     % figure example
+%     \begin{figure}
+%         \centering
+%         \begin{subfigure}{3in}
+%             \centering
+%             \includegraphics[width=3in]{blah.pdf}
+%             \caption{Hi}
+%         \end{subfigure}
+%         \caption{Bye}
+%         \label{fig:example}
+%     \end{figure}
+
+
+    \printbibliography
 
 \end{document}
