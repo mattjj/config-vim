@@ -20,13 +20,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " github repos
+Bundle 'davidhalter/jedi-vim'
+Bundle 'adinapoli/vim-markmultiple'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'docunext/closetag.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/screen'
 Bundle 'ervandew/supertab'
-Bundle 'fs111/pydoc.vim'
+" Bundle 'fs111/pydoc.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'JuliaLang/julia-vim'
 Bundle 'kana/vim-arpeggio'
@@ -82,22 +84,6 @@ endif
 
 if has('ruby')
     " Bundle 'LustyJuggler'
-endif
-
-" bundles i haven't figured out but may be worth learning
-" Bundle 'spiiph/vim-space'
-if has('python')
-python << EOF
-import vim
-try:
-    import ropevim
-    vim.command(r'let g:has_ropevim=1')
-except ImportError:
-    vim.command(r'let g:has_ropevim=0')
-EOF
-    if g:has_ropevim
-        Bundle 'rygwdn/rope-omni'
-    endif
 endif
 
 filetype plugin indent on
