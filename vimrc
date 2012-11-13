@@ -19,8 +19,7 @@ let g:showmarks_textupper="\t"
 let g:showmarks_textother="\t"
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.'`^<>"
 let g:jedi#goto_command = "<leader>o"
-" let g:jedi#popup_on_dot=0
-let g:jedi#show_function_definition=0
+" let g:jedi#show_function_definition=0
 nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
