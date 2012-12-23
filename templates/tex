@@ -1,18 +1,48 @@
 \documentclass{article}
 
-\RequirePackage[top=1.4in,bottom=1.4in,left=2in,right=2in]{geometry}
+\RequirePackage[top=1.2in,bottom=1.2in,left=1.5in,right=1.5in]{geometry}
 \RequirePackage{subcaption}
 \RequirePackage[labelfont=bf]{caption}
+\RequirePackage{float}
 
 \RequirePackage{amsmath,amsfonts,amssymb,amsthm}
+\RequirePackage{algorithm}
+\RequirePackage[noend]{algpseudocode}
 \RequirePackage{graphicx}
+\RequirePackage[margin=0.5in]{caption}
 \RequirePackage[colorlinks=true]{hyperref}
 \RequirePackage{appendix}
 \RequirePackage{url}
-\usepackage[backend=biber,url=true,doi=true,eprint=true]{biblatex}
+\RequirePackage{cleveref}
+
+% \usepackage[style=authoryear-comp,
+%             uniquelist=false,
+%             maxnames=1,
+%             maxbibnames=5,
+%             backend=biber,
+%             url=true,
+%             doi=true,
+%             eprint=true]{biblatex}
 % \addbibresource{bib.bib}
 
+\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\T}{\mathsf{T}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\thepartition}{\mathcal{P}}
+\newcommand{\iid}[1]{\stackrel{\text{iid}}{#1}}
+\newcommand{\indices}{\mathcal{I}}
+\newcommand\indep{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern4mu{#1#2}}}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
 
 \begin{document}
     \begin{center}
@@ -27,19 +57,7 @@
     \end{center}
 
 
-%     % figure example
-%     \begin{figure}
-%         \centering
-%         \begin{subfigure}{3in}
-%             \centering
-%             \includegraphics[width=3in]{blah.pdf}
-%             \caption{Hi}
-%         \end{subfigure}
-%         \caption{Bye}
-%         \label{fig:example}
-%     \end{figure}
 
-
-    \printbibliography
-
+%     \clearpage
+%     \printbibliography
 \end{document}

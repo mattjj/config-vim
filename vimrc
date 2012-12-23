@@ -82,7 +82,7 @@ set directory=~/.vim/swap//
 if v:version >= '703'
     set undodir=~/.vim/undo//
     set undofile
-    set undoreload=10000
+    set undoreload=50000
 endif
 
 " Set up Printer options
