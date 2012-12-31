@@ -42,6 +42,7 @@ Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'vim-scripts/pep8'
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-afterimage'
@@ -55,9 +56,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-vividchalk'
-Bundle 'vim-scripts/pep8'
-Bundle 'wgibbs/vim-irblack'
-" Bundle 'ivanov/vim-ipython'
+Bundle "tpope/vim-sleuth"
 
 " vim-scripts repos
 Bundle 'bufkill.vim'
