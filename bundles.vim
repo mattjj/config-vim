@@ -26,7 +26,6 @@ Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'docunext/closetag.vim'
 Bundle 'edsono/vim-matchit'
-Bundle 'ervandew/screen'
 Bundle 'ervandew/supertab'
 " Bundle 'fs111/pydoc.vim'
 Bundle 'godlygeek/tabular'
@@ -62,7 +61,6 @@ Bundle 'wgibbs/vim-irblack'
 
 " vim-scripts repos
 Bundle 'bufkill.vim'
-Bundle 'bufkill.vim'
 Bundle 'current-func-info.vim'
 Bundle 'LaTeX-Box'
 Bundle 'Lucius'
@@ -81,11 +79,6 @@ endif
 if v:version >= '703' && has('python')
     Bundle 'sjl/gundo.vim'
     Bundle 'UltiSnips'
-    " Bundle 'fmoralesc/vim-pad'
-endif
-
-if has('ruby')
-    " Bundle 'LustyJuggler'
 endif
 
 filetype plugin indent on

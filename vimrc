@@ -47,7 +47,6 @@ if &t_Co > 2 || has("gui_running")
     set number
 endif
 
-" and I type fast
 set timeoutlen=500
 
 " turn on hlsearch, but make it go away when I want
