@@ -12,21 +12,25 @@ endif
 let g:syntastic_enable_signs=1
 map <leader>td <Plug>TaskList
 map <leader>g :GundoToggle<CR>
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 let g:showmarks_enable=0 " use \mt to toggle
 let g:showmarks_textlower="\t"
 let g:showmarks_textupper="\t"
 let g:showmarks_textother="\t"
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.'`^<>"
-let g:jedi#goto_command = "<leader>o"
-" let g:jedi#show_function_definition=0
+" let g:jedi#goto_command = "<leader>o"
+let g:jedi#show_function_definition=0
+let g:jedi#popup_on_dot = 0
 nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.pyc$'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.pyc|\.npy$'
+let g:ctrlp_extensions = ['tag', 'buffertag']
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 nmap <c-b> :CtrlPBuffer<CR>
-nmap <c-n> :CtrlPMRU<CR>
 " let g:pad_dir=expand("~/.notes/")
 " let g:pad_window_height=30
 
@@ -108,8 +112,7 @@ set showmatch
 set autochdir
 
 " use hidden buffers? i keep changing my mind
-" set nohid
-set hid
+set nohid
 
 " use mouse
 if has('mouse')
@@ -241,11 +244,20 @@ endif
 " fonts and colors
 " colorscheme slate
 " silent! colorscheme customslate
-" let g:solarized_termcolors=256
 let g:solarized_visibility = "normal"
 let g:solarized_contrast = "high"
-set background=dark
+if !has('gui_running')
+  let g:solarized_termtrans=1
+  if (&t_Co >= 256 || $TERM == 'xterm-256color')
+    " do nothing
+  else
+    let g:solarized_termcolors=16
+  endif
+endif
 colorscheme solarized
+
+set background=dark
+
 set fillchars="fold:"
 
 
@@ -356,3 +368,6 @@ set splitright
 " omnicomplete previews appear on the bottom, which i like
 set splitbelow
 
+nmap <silent> * :let @/='\<'.expand('<cword>').'\>' \| :set hlsearch<CR>
+
+set shell=/bin/bash

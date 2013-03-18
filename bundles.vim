@@ -20,15 +20,16 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " github repos
-Bundle 'davidhalter/jedi-vim'
 Bundle 'adinapoli/vim-markmultiple'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'docunext/closetag.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
 " Bundle 'fs111/pydoc.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'jpalardy/vim-slime'
 Bundle 'JuliaLang/julia-vim'
 Bundle 'kana/vim-arpeggio'
 Bundle 'kchmck/vim-coffee-script'
@@ -37,15 +38,17 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'mileszs/ack.vim'
 Bundle 'mitechie/pyflakes-pathogen'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'vim-scripts/pep8'
+Bundle 'Valloric/YouCompleteMe'
 " NOTE: Tim Pope is my hero
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-afterimage'
+Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -56,7 +59,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-vividchalk'
-Bundle "tpope/vim-sleuth"
+" Bundle 'tpope/vim-sleuth'
 
 " vim-scripts repos
 Bundle 'bufkill.vim'
@@ -69,11 +72,6 @@ Bundle 'Rename'
 
 " my bundles
 Bundle 'mattjj/vim-prefs'
-
-" conditional bundles
-if !has("gui_running")
-    Bundle 'ShowMarks7'
-endif
 
 if v:version >= '703' && has('python')
     Bundle 'sjl/gundo.vim'
