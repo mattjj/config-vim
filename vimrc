@@ -20,8 +20,8 @@ let g:showmarks_textupper="\t"
 let g:showmarks_textother="\t"
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.'`^<>"
 " let g:jedi#goto_command = "<leader>o"
-let g:jedi#show_function_definition=0
-let g:jedi#popup_on_dot = 0
+" let g:jedi#show_function_definition=0
+" let g:jedi#popup_on_dot = 0
 nmap <leader>A :Ack!
 nnoremap <silent> <leader>y :TagbarToggle<CR>
 let g:LustyJugglerShowKeys = 'a'
@@ -31,11 +31,13 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nmap <c-b> :CtrlPBuffer<CR>
+nmap <c-c> :CtrlPTag<CR>
 let g:ycm_filetype_blacklist = {
             \ 'tex' : 1,
             \ 'markdown' : 1,
             \ 'text' : 1,
             \ 'scheme' : 1,
+            \ 'go' : 1,
             \}
 " let g:pad_dir=expand("~/.notes/")
 " let g:pad_window_height=30
@@ -282,8 +284,8 @@ set autoread
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " open definition in new veritcal split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-"set tags=tags;/
-set tags=./.tags,./tags,tags
+set tags=.tags,tags;/
+set tags+=~/Dropbox/work/pyhsmm/tags,~/Dropbox/work/pybasicbayes/tags,~/Dropbox/work/pymattutil/tags
 
 set wildmode=longest,list,full
 set wildmenu
