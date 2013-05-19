@@ -77,7 +77,7 @@ set incsearch
 cmap ;\ \(\)<Left><Left>
 
 " I have no idea, but I think these are fine
-set viminfo=/10,'10,r/mnt/zip,r/mnt/floppy,f0,h,\"100
+"set viminfo=/10,'10,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 set wildmode=list:longest,full
 set shortmess+=r
 set bs=2
@@ -198,8 +198,8 @@ map <buffer> \m :w<CR>:!make<CR>
 nmap Y y$
 
 " cursorline
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
+" au WinLeave * set nocursorline nocursorcolumn
+" au WinEnter * set cursorline cursorcolumn
 
 " wrap when moving left or right
 nnoremap j gj
@@ -252,25 +252,14 @@ endif
 " fonts and colors
 " colorscheme slate
 " silent! colorscheme customslate
-let g:solarized_visibility = "normal"
-let g:solarized_contrast = "high"
-if !has('gui_running')
-  let g:solarized_termtrans=1
-  if (&t_Co >= 256 || $TERM == 'xterm-256color')
-    " do nothing
-  else
-    let g:solarized_termcolors=16
-  endif
-endif
-colorscheme solarized
-
+syntax enable
 set background=dark
-
-set fillchars="fold:"
+colorscheme solarized
 
 
 " fold stuff
 set fdo=hor,insert,search,undo,tag
+set fillchars="fold:"
 set fdm=marker
 set foldlevelstart=0
 
