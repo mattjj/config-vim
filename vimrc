@@ -1,54 +1,23 @@
-""" look for a bundles file (should be there!)
-if filereadable(expand("~/.vim/bundles.vim"))
-    source ~/.vim/bundles.vim
+" pathogen
+
+let g:pathogen_disabled = []
+if v:version < '703' || !has('python')
+    call add(g:pathogen_disabled, 'gundo')
+    call add(g:pathogen_disabled, 'Ultisnips')
 endif
 
-""" Plugin-specific stuff
+execute pathogen#infect()
+execute pathogen#helptags()
+filetype plugin indent on
 
-" TODO move these to files, either in my own preferences repo or in my own
-" 'master' versions of the sub-repos. the former would probably be easier to
-" maintain
-" plugin options
-let g:syntastic_enable_signs=1
-map <leader>td <Plug>TaskList
-map <leader>g :GundoToggle<CR>
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
-let g:showmarks_enable=0 " use \mt to toggle
-let g:showmarks_textlower="\t"
-let g:showmarks_textupper="\t"
-let g:showmarks_textother="\t"
-let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.'`^<>"
-" let g:jedi#goto_command = "<leader>o"
-" let g:jedi#show_function_definition=0
-" let g:jedi#popup_on_dot = 0
-nmap <leader>A :Ack!
-nnoremap <silent> <leader>y :TagbarToggle<CR>
-let g:LustyJugglerShowKeys = 'a'
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.pyc|\.npy$'
-let g:ctrlp_extensions = ['tag', 'buffertag']
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-nmap <c-b> :CtrlPBuffer<CR>
-nmap <c-c> :CtrlPTag<CR>
-let g:ycm_filetype_blacklist = {
-            \ 'tex' : 1,
-            \ 'markdown' : 1,
-            \ 'text' : 1,
-            \ 'scheme' : 1,
-            \ 'go' : 1,
-            \}
-" let g:pad_dir=expand("~/.notes/")
-" let g:pad_window_height=30
+" vi? This is VIMMMMMMMMMMMMMM
+set nocompatible
 
 """ Now the general stuff!
 
 if filereadable(expand("~/.vimrc_specific"))
     source ~/.vimrc_specific
 endif
-
-nmap <leader>v :tabe ~/.vimrc<CR>
 
 " all movement keys will move the the next line when at last character
 set whichwrap=b,s,h,l,~,[,],<,>
@@ -73,9 +42,6 @@ set ignorecase
 set smartcase
 set incsearch
 
-" quick mapping to put \(\) in pattern string
-cmap ;\ \(\)<Left><Left>
-
 " I have no idea, but I think these are fine
 "set viminfo=/10,'10,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 set wildmode=list:longest,full
@@ -85,7 +51,7 @@ set showmode
 set shiftround
 set wrap
 
-" Setup backup location and enable
+" Set up backup location and enable
 " the double slash means editing /etc/X11/x.org and ~/x.org won't clobber
 set backupdir=~/.vim/backup//
 set backup
@@ -96,28 +62,11 @@ if v:version >= '703'
     set undoreload=50000
 endif
 
-" Set up Printer options
-set printoptions=left:15mm,right:15mm,top:15mm,bottom:15mm,paper:A4,header:2,syntax:n
-set printfont=courier_new:h7
-
-" Set Printer up
-set printexpr=PrintFile(v:fname_in)
-
-if !exists("*PrintFile")
-    function PrintFile(fname)
-        call system("lpr -r " . a:fname)
-        return v:shell_error
-    endfunc
-endif
-
-" so that .tex files are latex filetype
-let g:tex_flavor='latex'
-
 " show matching parens, brackets
 set showmatch
 
-" change pwd to mru file/buffer
-set autochdir
+" do not change pwd to mru file/buffer
+set noautochdir
 
 " use hidden buffers? i keep changing my mind
 set nohid
@@ -125,20 +74,10 @@ set nohid
 " use mouse
 if has('mouse')
   set mouse=a
-  " if &term =~ "xterm" || &term =~ "screen"
-  "   " for some reason, doing this directly with 'set ttymouse=xterm2'
-  "   " doesn't work -- 'set ttymouse?' returns xterm2 but the mouse
-  "   " makes tmux enter copy mode instead of selecting or scrolling
-  "   " inside Vim -- but luckily, setting it up from within autocmds
-  "   " works
-  "   autocmd VimEnter * set ttymouse=xterm2
-  "   autocmd FocusGained * set ttymouse=xterm2
-  "   autocmd BufEnter * set ttymouse=xterm2
-  " endif
 endif
 
 " ignore some stuff
-set wildignore+=*/.hg/*,*/.svn/*,*.pyc
+set wildignore+=*/.hg/*,*/.svn/*,*/.git/*,*.pyc
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -155,12 +94,6 @@ if has("autocmd")
             endif
         endfunction
     augroup END
-
-    augroup htmlTags
-        au!
-        autocmd FileType html let b:closetag_html_style=1
-        autocmd FileType html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-    augroup End
 
     augroup vimStuff
         au!
@@ -197,10 +130,6 @@ map <buffer> \m :w<CR>:!make<CR>
 " yank to end of line
 nmap Y y$
 
-" cursorline
-" au WinLeave * set nocursorline nocursorcolumn
-" au WinEnter * set cursorline cursorcolumn
-
 " wrap when moving left or right
 nnoremap j gj
 nnoremap k gk
@@ -209,12 +138,7 @@ vnoremap k gk
 " and add virtual columns during visual block
 set ve+=block
 
-" Bind some stuff to escape
-call arpeggio#load()
-Arpeggio inoremap jk <ESC>
-
 " Bindings for tabbed editing
-"noremap <C-n> :tabnew<CR>
 noremap <C-l> :tabnext<CR>
 noremap <C-h> :tabNext<CR>
 
@@ -236,11 +160,6 @@ set lbr
 set ruler
 
 " correct my common typos
-if has("multi_byte")
-    abbreviate tableflip (╯°□°）╯︵ ┻━┻
-    abbreviate tablefix ┬──┬ ノ( ゜-゜ノ)
-    abbreviate lod ಠ_ಠ
-endif
 if (&encoding == "utf-8")
     set list
     set listchars=extends:»,tab:▸\ ,trail:›
@@ -255,7 +174,6 @@ endif
 syntax enable
 set background=dark
 colorscheme solarized
-
 
 " fold stuff
 set fdo=hor,insert,search,undo,tag
@@ -280,7 +198,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 set formatprg="par -w"
-set grepprg="ack"
+set grepprg="ag"
 
 " set completion to show a preview window
 set cot=menu,preview,menuone
@@ -293,8 +211,7 @@ if v:version >= '703'
     set cm=blowfish
 endif
 
-" chordless saving, with a fix so that EasyMotion doesn't use the same mapping
-let g:EasyMotion_mapping_w = '_w'
+" chordless saving
 nnoremap <leader>w :w<CR>
 
 " easier jumping between errors and opening error list window
