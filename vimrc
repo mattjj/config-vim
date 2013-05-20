@@ -192,7 +192,7 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " open definition in new veritcal split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 set tags=.tags,tags;/
-set tags+=~/Dropbox/work/pyhsmm/tags,~/Dropbox/work/pybasicbayes/tags,~/Dropbox/work/pymattutil/tags
+set tags+=~//work/pyhsmm/tags,~/work/pybasicbayes/tags,~/work/pymattutil/tags
 
 set wildmode=longest,list,full
 set wildmenu
