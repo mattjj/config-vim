@@ -276,3 +276,6 @@ set splitbelow
 nmap <silent> * :let @/='\<'.expand('<cword>').'\>' \| :set hlsearch<CR>
 
 set shell=/bin/bash
+
+let g:tex_flavor='latex'
+
