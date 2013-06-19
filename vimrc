@@ -65,8 +65,9 @@ endif
 " show matching parens, brackets
 set showmatch
 
-" do not change pwd to mru file/buffer
-set noautochdir
+" change pwd to mru file/buffer
+set autochdir
+command! Cdpwd execute "cd %:p:h"
 
 " use hidden buffers? i keep changing my mind
 set nohid
