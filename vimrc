@@ -67,6 +67,7 @@ set showmatch
 
 " change pwd to mru file/buffer
 set autochdir
+command! Cdpwd execute "cd %:p:h"
 
 " use hidden buffers? i keep changing my mind
 set nohid
@@ -276,3 +277,6 @@ set splitbelow
 nmap <silent> * :let @/='\<'.expand('<cword>').'\>' \| :set hlsearch<CR>
 
 set shell=/bin/bash
+
+let g:tex_flavor='latex'
+
