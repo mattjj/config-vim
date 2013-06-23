@@ -150,3 +150,6 @@
 [submodule "bundle/vim-seek"]
 	path = bundle/vim-seek
 	url = https://github.com/goldfeld/vim-seek
+[submodule "bundle/nose.vim"]
+	path = bundle/nose.vim
+	url = https://github.com/lambdalisue/nose.vim
