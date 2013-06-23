@@ -280,3 +280,5 @@ set shell=/bin/bash
 
 let g:tex_flavor='latex'
 
+nnoremap Z :w<CR>
+
