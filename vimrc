@@ -170,11 +170,13 @@ else
 endif
 
 " fonts and colors
-" colorscheme slate
-" silent! colorscheme customslate
 syntax enable
+
 set background=dark
 colorscheme solarized
+
+" set background=light
+" colorscheme github
 
 " fold stuff
 set fdo=hor,insert,search,undo,tag
