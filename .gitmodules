@@ -153,3 +153,6 @@
 [submodule "bundle/nose.vim"]
 	path = bundle/nose.vim
 	url = https://github.com/lambdalisue/nose.vim
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
