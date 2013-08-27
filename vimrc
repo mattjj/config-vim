@@ -290,3 +290,5 @@ set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 
+let g:airline_powerline_fonts = 1 " this needs to be in vimrc for some ordering issue
+set laststatus=2
