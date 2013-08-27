@@ -159,3 +159,6 @@
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline

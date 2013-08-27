@@ -284,3 +284,9 @@ let g:tex_flavor='latex'
 
 nnoremap Z :w<CR>
 
+set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
+set confirm                 " Y-N-C prompt if closing with unsaved changes.
+set showcmd                 " Show incomplete normal mode commands as I type.
+set report=0                " : commands always print changed line count.
+set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
+
