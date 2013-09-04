@@ -1,6 +1,7 @@
 " pathogen
 
 let g:pathogen_disabled = []
+" call add(g:pathogen_disabled, 'tagbar') " TODO remove
 if v:version < '703' || !has('python')
     call add(g:pathogen_disabled, 'gundo')
     call add(g:pathogen_disabled, 'Ultisnips')
@@ -70,7 +71,7 @@ set autochdir
 command! Cdpwd execute "cd %:p:h"
 
 " use hidden buffers? i keep changing my mind
-set nohid
+set hid
 
 " use mouse
 if has('mouse')
@@ -140,8 +141,8 @@ vnoremap k gk
 set ve+=block
 
 " Bindings for tabbed editing
-noremap <C-l> :tabnext<CR>
-noremap <C-h> :tabNext<CR>
+noremap <C-l> :bnext<CR>
+noremap <C-h> :bprev<CR>
 
 " Bindings for windows
 nnoremap <leader>h <c-w>h
@@ -195,7 +196,7 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " open definition in new veritcal split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 set tags=.tags,tags;/
-set tags+=~//work/pyhsmm/tags,~/work/pybasicbayes/tags,~/work/pymattutil/tags
+set tags+=~/Dropbox/work/pyhsmm/tags,~/Dropbox/work/pybasicbayes/tags,~/Dropbox/work/pymattutil/tags,~/Dropbox/work/pyhsmm-library-models
 
 set wildmode=longest,list,full
 set wildmenu
@@ -290,5 +291,5 @@ set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 
-let g:airline_powerline_fonts = 1 " this needs to be in vimrc for some ordering issue
+let g:airline_powerline_fonts = 0 " this needs to be in vimrc for some ordering issue
 set laststatus=2

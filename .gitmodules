@@ -43,9 +43,6 @@
 [submodule "bundle/julia-vim"]
 	path = bundle/julia-vim
 	url = https://github.com/JuliaLang/julia-vim.git
-[submodule "bundle/pyflakes-pathogen"]
-	path = bundle/pyflakes-pathogen
-	url = https://github.com/mitechie/pyflakes-pathogen.git
 [submodule "bundle/pytest.vim"]
 	path = bundle/pytest.vim
 	url = https://github.com/alfredodeza/pytest.vim.git
@@ -93,9 +90,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
