@@ -1,7 +1,6 @@
 " pathogen
 
 let g:pathogen_disabled = []
-" call add(g:pathogen_disabled, 'tagbar') " TODO remove
 if v:version < '703' || !has('python')
     call add(g:pathogen_disabled, 'gundo')
     call add(g:pathogen_disabled, 'Ultisnips')
