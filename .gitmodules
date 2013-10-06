@@ -151,7 +151,7 @@
 	url = https://github.com/marijnh/tern_for_vim.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
-	url = https://github.com/bling/vim-airline
+	url = https://github.com/mattjj/vim-airline
 [submodule "bundle/vim-gas"]
 	path = bundle/vim-gas
 	url = https://github.com/Shirk/vim-gas.git
