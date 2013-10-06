@@ -78,7 +78,7 @@ if has('mouse')
 endif
 
 " ignore some stuff
-set wildignore+=*/.hg/*,*/.svn/*,*/.git/*,*.pyc
+set wildignore+=*/.hg/*,*/.svn/*,*/.git/*,*.pyc,*.so
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
