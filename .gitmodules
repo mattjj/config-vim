@@ -155,3 +155,6 @@
 [submodule "bundle/vim-gas"]
 	path = bundle/vim-gas
 	url = https://github.com/Shirk/vim-gas.git
+[submodule "bundle/vim-cython"]
+	path = bundle/vim-cython
+	url = https://github.com/tshirtman/vim-cython
