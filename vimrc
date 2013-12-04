@@ -181,7 +181,6 @@ colorscheme solarized
 " fold stuff
 set fdo=hor,insert,search,undo,tag
 set fillchars="fold:"
-set fdm=marker
 set foldlevelstart=99
 
 " sets w!! to sudo write
@@ -292,3 +291,5 @@ set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 
 let g:airline_powerline_fonts = 0 " this needs to be in vimrc for some ordering issue
 set laststatus=2
+
+syntax sync minlines=256
