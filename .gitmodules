@@ -158,3 +158,9 @@
 [submodule "bundle/vim-cython"]
 	path = bundle/vim-cython
 	url = https://github.com/tshirtman/vim-cython
+[submodule "bundle/vim-sexp-mappings-for-regular-people.git"]
+	path = bundle/vim-sexp-mappings-for-regular-people.git
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+[submodule "bundle/vim-sexp"]
+	path = bundle/vim-sexp
+	url = git://github.com/guns/vim-sexp.git

@@ -182,7 +182,6 @@ colorscheme solarized
 " fold stuff
 set fdo=hor,insert,search,undo,tag
 set fillchars="fold:"
-set foldlevelstart=99
 
 " sets w!! to sudo write
 cmap w!! w !sudo tee % > /dev/null
