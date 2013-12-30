@@ -164,3 +164,6 @@
 [submodule "bundle/vim-sexp"]
 	path = bundle/vim-sexp
 	url = git://github.com/guns/vim-sexp.git
+[submodule "bundle/vim-howdoi"]
+	path = bundle/vim-howdoi
+	url = https://github.com/laurentgoudet/vim-howdoi.git
