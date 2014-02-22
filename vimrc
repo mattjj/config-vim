@@ -293,3 +293,5 @@ let g:airline_powerline_fonts = 0 " this needs to be in vimrc for some ordering 
 set laststatus=2
 
 syntax sync minlines=256
+
+set noautochdir

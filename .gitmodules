@@ -167,3 +167,9 @@
 [submodule "bundle/vim-howdoi"]
 	path = bundle/vim-howdoi
 	url = https://github.com/laurentgoudet/vim-howdoi.git
+[submodule "bundle/vim-argumentative"]
+	path = bundle/vim-argumentative
+	url = https://github.com/PeterRincker/vim-argumentative.git
+[submodule "bundle/vim-fish"]
+	path = bundle/vim-fish
+	url = https://github.com/dag/vim-fish.git
