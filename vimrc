@@ -295,3 +295,5 @@ set laststatus=2
 syntax sync minlines=256
 
 set noautochdir
+
+set lazyredraw
