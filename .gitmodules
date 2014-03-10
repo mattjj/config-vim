@@ -1,7 +1,3 @@
-[submodule "bundle/LaTeX-Box"]
-	path = bundle/LaTeX-Box
-	url = http://github.com/vim-scripts/LaTeX-Box.git
-	ignore = dirty
 [submodule "bundle/Lucius"]
 	path = bundle/Lucius
 	url = https://github.com/vim-scripts/Lucius.git
