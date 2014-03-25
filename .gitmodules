@@ -4,9 +4,6 @@
 [submodule "bundle/Rename"]
 	path = bundle/Rename
 	url = https://github.com/vim-scripts/Rename.git
-[submodule "bundle/UltiSnips"]
-	path = bundle/UltiSnips
-	url = https://github.com/vim-scripts/UltiSnips.git
 [submodule "bundle/bufkill.vim"]
 	path = bundle/bufkill.vim
 	url = https://github.com/vim-scripts/bufkill.vim.git
@@ -172,3 +169,9 @@
 [submodule "bundle/LaTeX-Box"]
 	path = bundle/LaTeX-Box
 	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git

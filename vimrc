@@ -239,8 +239,10 @@ nmap <C-Left> <C-T>
 " toggle nu and relnu with control-K
 function! g:ToggleNuMode()
     if (&rnu == 1)
+        set nornu
         set nu
     else
+        set nonu
         set rnu
     endif
 endfunc
