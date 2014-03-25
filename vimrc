@@ -297,3 +297,6 @@ syntax sync minlines=256
 set noautochdir
 
 set lazyredraw
+
+set cursorline
+set cursorcolumn
