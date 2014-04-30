@@ -283,7 +283,8 @@ set shell=/bin/bash
 
 let g:tex_flavor='latex'
 
-nnoremap Z :w<CR>
+" nnoremap Z :w<CR>
+nnoremap X :w<CR>
 
 set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
 set confirm                 " Y-N-C prompt if closing with unsaved changes.
