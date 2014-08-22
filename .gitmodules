@@ -142,9 +142,6 @@
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
-[submodule "bundle/vim-airline"]
-	path = bundle/vim-airline
-	url = https://github.com/mattjj/vim-airline
 [submodule "bundle/vim-gas"]
 	path = bundle/vim-gas
 	url = https://github.com/Shirk/vim-gas.git
@@ -181,3 +178,6 @@
 [submodule "bundle/atp-vim-code"]
 	path = bundle/atp-vim-code
 	url = git://git.code.sf.net/p/atp-vim/code
+[submodule "bundle/tmuxline"]
+	path = bundle/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim
