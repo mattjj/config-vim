@@ -222,8 +222,8 @@ nnoremap <leader>w :w<CR>
 " easier jumping between errors and opening error list window
 " map <leader>cc :botright cope<cr> " there seem to be errors with the
 " quickfix window
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+" map <leader>n :cn<cr>
+" map <leader>p :cp<cr>
 
 " Bubble single lines with control-arrows
 nmap <C-Up> [e
