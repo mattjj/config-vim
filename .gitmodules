@@ -187,3 +187,6 @@
 [submodule "bundle/vim-niji"]
 	path = bundle/vim-niji
 	url = https://github.com/amdt/vim-niji.git
+[submodule "bundle/vim-sleuth"]
+	path = bundle/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth.git
