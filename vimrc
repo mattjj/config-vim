@@ -149,12 +149,6 @@ set ve+=block
 noremap <C-l> :bnext<CR>
 noremap <C-h> :bprev<CR>
 
-" Bindings for windows
-nnoremap <leader>h <c-w>h
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
-nnoremap <leader>l <c-w>l
-
 " Make tabs work how I like them: made of 4 spaces
 set expandtab
 set shiftwidth=4
