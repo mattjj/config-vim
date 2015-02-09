@@ -190,3 +190,15 @@
 [submodule "bundle/vim-instant-markdown"]
 	path = bundle/vim-instant-markdown
 	url = git@github.com:suan/vim-instant-markdown.git
+[submodule "bundle/vim-gotham"]
+	path = bundle/vim-gotham
+	url = git@github.com:whatyouhide/vim-gotham.git
+[submodule "bundle/vim-HiLinkTrace"]
+	path = bundle/vim-HiLinkTrace
+	url = https://github.com/gerw/vim-HiLinkTrace.git
+[submodule "bundle/FastFold"]
+	path = bundle/FastFold
+	url = git@github.com:Konfekt/FastFold.git
+[submodule "bundle/vim-flake8"]
+	path = bundle/vim-flake8
+	url = https://github.com/nvie/vim-flake8.git

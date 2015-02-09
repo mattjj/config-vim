@@ -1,9 +1,15 @@
+if filereadable(expand("~/.vimrc_specific"))
+    source ~/.vimrc_specific
+endif
+
 " pathogen
 
 let g:pathogen_disabled = []
 
 call add(g:pathogen_disabled, 'vim-go')
 call add(g:pathogen_disabled, 'atp-vim-code')
+call add(g:pathogen_disabled, 'pep8')
+call add(g:pathogen_disabled, 'vim-flake8')
 " call add(g:pathogen_disabled, 'LaTeX-Box')
 " call add(g:pathogen_disabled, 'YouCompleteMe')
 
@@ -20,10 +26,6 @@ filetype plugin indent on
 set nocompatible
 
 """ Now the general stuff!
-
-if filereadable(expand("~/.vimrc_specific"))
-    source ~/.vimrc_specific
-endif
 
 " all movement keys will move the the next line when at last character
 set whichwrap=b,s,h,l,~,[,],<,>
@@ -172,11 +174,18 @@ endif
 " fonts and colors
 syntax enable
 
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 " set background=light
 " colorscheme github
+
+colorscheme Tomorrow-Night-Bright
+
+" colorscheme gotham256
+
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 " fold stuff
 set fdo=hor,insert,search,undo,tag
@@ -208,9 +217,9 @@ set cot=menu,preview,menuone
 "autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 " use blowfish encryption with :X
-if v:version >= '703'
-    set cm=blowfish
-endif
+" if v:version >= '703'
+"     set cm=blowfish
+" endif
 
 " chordless saving
 nnoremap <leader>w :w<CR>
@@ -301,3 +310,6 @@ set lazyredraw
 
 set cursorline
 set cursorcolumn
+
+" sentences should be separated by a period and ONE space when using gq
+set nojoinspaces
