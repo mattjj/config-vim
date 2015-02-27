@@ -1,0 +1,31 @@
+\documentclass{article}
+
+%% general
+\usepackage[top=1.25in,left=1.25in,right=1.25in,bottom=1.25in]{geometry}
+\usepackage[colorlinks,linktocpage,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+%% math
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+%% figures
+\usepackage{graphicx}
+\usepackage[labelfont=bf,subrefformat=simple,labelformat=simple,margin=0.25in,font=small]{subcaption}
+\usepackage[margin=0.25in,font=small,labelfont=bf]{caption}
+
+%% symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Nn}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\iid}[1]{\stackrel{\text{iid}}{#1}}
+\newcommand\indep{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern4mu{#1#2}}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\KL}{KL}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\begin{document}
+
+
+\end{document}
