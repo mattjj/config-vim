@@ -9,7 +9,6 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-go')
 call add(g:pathogen_disabled, 'atp-vim-code')
 call add(g:pathogen_disabled, 'pep8')
-" call add(g:pathogen_disabled, 'LaTeX-Box')
 " call add(g:pathogen_disabled, 'YouCompleteMe')
 
 if v:version < '703' || !has('python')
