@@ -40,6 +40,8 @@ set timeoutlen=500
 set hls
 nmap <space><space> :noh<CR>/<BS>
 
+nnoremap <BS> <C-^>
+
 " show command as I'm typing it
 set showcmd
 
