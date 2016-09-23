@@ -291,4 +291,7 @@ set nocursorcolumn
 " sentences should be separated by a period and ONE space when using gq
 set nojoinspaces
 
+" colorscheme
+let base16colorspace=256
 let g:airline_powerline_fonts = 1
+colo base16-google-dark
