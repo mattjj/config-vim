@@ -3,20 +3,7 @@ if filereadable(expand("~/.vimrc_specific"))
 endif
 
 " pathogen
-
 let g:pathogen_disabled = []
-
-call add(g:pathogen_disabled, 'vim-go')
-call add(g:pathogen_disabled, 'atp-vim-code')
-call add(g:pathogen_disabled, 'pep8')
-call add(g:pathogen_disabled, 'tmuxline')
-
-" google does these for me
-call add(g:pathogen_disabled, 'YouCompleteMe')
-call add(g:pathogen_disabled, 'syntastic')
-call add(g:pathogen_disabled, 'Ultisnips')
-call add(g:pathogen_disabled, 'vim-airline')
-
 if v:version < '703' || !has('python')
     call add(g:pathogen_disabled, 'gundo')
     call add(g:pathogen_disabled, 'Ultisnips')
@@ -304,4 +291,4 @@ set nocursorcolumn
 " sentences should be separated by a period and ONE space when using gq
 set nojoinspaces
 
-colo base16-google-dark
+let g:airline_powerline_fonts = 1
