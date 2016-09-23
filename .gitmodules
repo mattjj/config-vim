@@ -1,12 +1,6 @@
-[submodule "bundle/Lucius"]
-	path = bundle/Lucius
-	url = https://github.com/vim-scripts/Lucius.git
 [submodule "bundle/Rename"]
 	path = bundle/Rename
 	url = https://github.com/vim-scripts/Rename.git
-[submodule "bundle/bufkill.vim"]
-	path = bundle/bufkill.vim
-	url = https://github.com/vim-scripts/bufkill.vim.git
 [submodule "bundle/current-func-info.vim"]
 	path = bundle/current-func-info.vim
 	url = https://github.com/vim-scripts/current-func-info.vim.git
@@ -14,45 +8,9 @@
 [submodule "bundle/pep8"]
 	path = bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/ag.vim"]
-	path = bundle/ag.vim
-	url = https://github.com/rking/ag.vim.git
-[submodule "bundle/closetag.vim"]
-	path = bundle/closetag.vim
-	url = https://github.com/docunext/closetag.vim.git
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "bundle/gundo.vim"]
-	path = bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim.git
-[submodule "bundle/julia-vim"]
-	path = bundle/julia-vim
-	url = https://github.com/JuliaLang/julia-vim.git
-[submodule "bundle/pytest.vim"]
-	path = bundle/pytest.vim
-	url = https://github.com/alfredodeza/pytest.vim.git
-[submodule "bundle/rainbow_parentheses.vim"]
-	path = bundle/rainbow_parentheses.vim
-	url = https://github.com/kien/rainbow_parentheses.vim.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/tabular"]
-	path = bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "bundle/vim-abolish"]
-	path = bundle/vim-abolish
-	url = https://github.com/tpope/vim-abolish.git
 [submodule "bundle/vim-afterimage"]
 	path = bundle/vim-afterimage
 	url = https://github.com/tpope/vim-afterimage.git
@@ -60,12 +18,6 @@
 [submodule "bundle/vim-characterize"]
 	path = bundle/vim-characterize
 	url = https://github.com/tpope/vim-characterize.git
-[submodule "bundle/vim-coffee-script"]
-	path = bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -85,69 +37,27 @@
 [submodule "bundle/vim-indent-object"]
 	path = bundle/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "bundle/vim-markmultiple"]
-	path = bundle/vim-markmultiple
-	url = https://github.com/adinapoli/vim-markmultiple.git
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = https://github.com/edsono/vim-matchit.git
-[submodule "bundle/vim-prefs"]
-	path = bundle/vim-prefs
-	url = https://github.com/mattjj/vim-prefs.git
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "bundle/vim-rsi"]
-	path = bundle/vim-rsi
-	url = https://github.com/tpope/vim-rsi.git
-[submodule "bundle/vim-scala"]
-	path = bundle/vim-scala
-	url = https://github.com/derekwyatt/vim-scala.git
-[submodule "bundle/vim-speeddating"]
-	path = bundle/vim-speeddating
-	url = https://github.com/tpope/vim-speeddating.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "bundle/vim-tbone"]
-	path = bundle/vim-tbone
-	url = https://github.com/tpope/vim-tbone.git
-[submodule "bundle/vim-unimpaired"]
-	path = bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "bundle/vim-vividchalk"]
-	path = bundle/vim-vividchalk
-	url = https://github.com/tpope/vim-vividchalk.git
-[submodule "bundle/vim-gocode"]
-	path = bundle/vim-gocode
-	url = https://github.com/Blackrush/vim-gocode
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
 [submodule "bundle/vim-seek"]
 	path = bundle/vim-seek
 	url = https://github.com/goldfeld/vim-seek
-[submodule "bundle/nose.vim"]
-	path = bundle/nose.vim
-	url = https://github.com/lambdalisue/nose.vim
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
-[submodule "bundle/tern_for_vim"]
-	path = bundle/tern_for_vim
-	url = https://github.com/marijnh/tern_for_vim.git
-[submodule "bundle/vim-gas"]
-	path = bundle/vim-gas
-	url = https://github.com/Shirk/vim-gas.git
 [submodule "bundle/vim-cython"]
 	path = bundle/vim-cython
 	url = https://github.com/tshirtman/vim-cython
-[submodule "bundle/vim-sexp-mappings-for-regular-people.git"]
-	path = bundle/vim-sexp-mappings-for-regular-people.git
-	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people.git
 [submodule "bundle/vim-sexp"]
 	path = bundle/vim-sexp
 	url = git://github.com/guns/vim-sexp.git
@@ -163,21 +73,9 @@
 [submodule "bundle/LaTeX-Box"]
 	path = bundle/LaTeX-Box
 	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "bundle/atp-vim-code"]
-	path = bundle/atp-vim-code
-	url = git://git.code.sf.net/p/atp-vim/code
-[submodule "bundle/tmuxline"]
-	path = bundle/tmuxline
-	url = https://github.com/edkolev/tmuxline.vim
-[submodule "bundle/vim-airline"]
-	path = bundle/vim-airline
-	url = https://github.com/bling/vim-airline.git
 [submodule "bundle/vim-niji"]
 	path = bundle/vim-niji
 	url = https://github.com/amdt/vim-niji.git
@@ -187,24 +85,18 @@
 [submodule "bundle/vim-instant-markdown"]
 	path = bundle/vim-instant-markdown
 	url = git@github.com:suan/vim-instant-markdown.git
-[submodule "bundle/vim-gotham"]
-	path = bundle/vim-gotham
-	url = git@github.com:whatyouhide/vim-gotham.git
-[submodule "bundle/vim-HiLinkTrace"]
-	path = bundle/vim-HiLinkTrace
-	url = https://github.com/gerw/vim-HiLinkTrace.git
-[submodule "bundle/FastFold"]
-	path = bundle/FastFold
-	url = git@github.com:Konfekt/FastFold.git
 [submodule "bundle/vim-flake8"]
 	path = bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8.git
-[submodule "bundle/python-syntax"]
-	path = bundle/python-syntax
-	url = https://github.com/hdima/python-syntax.git
-[submodule "bundle/base16-vim"]
-	path = bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
-[submodule "bundle/vimtex"]
-	path = bundle/vimtex
-	url = git@github.com:lervag/vimtex.git
+[submodule "bundle/ctrlp.vim"]
+	path = bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "bundle/vim-prefs"]
+	path = bundle/vim-prefs
+	url = https://github.com/mattjj/vim-prefs.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = git://github.com/vim-airline/vim-airline.git
+[submodule "bundle/vim-airline-themes"]
+	path = bundle/vim-airline-themes
+	url = git://github.com/vim-airline/vim-airline-themes.git

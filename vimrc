@@ -1,5 +1,5 @@
 if filereadable(expand("~/.vimrc_specific"))
-    source ~/.vimrc_specific
+    " source ~/.vimrc_specific
 endif
 
 " pathogen
@@ -9,7 +9,13 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-go')
 call add(g:pathogen_disabled, 'atp-vim-code')
 call add(g:pathogen_disabled, 'pep8')
-" call add(g:pathogen_disabled, 'YouCompleteMe')
+call add(g:pathogen_disabled, 'tmuxline')
+
+" google does these for me
+call add(g:pathogen_disabled, 'YouCompleteMe')
+call add(g:pathogen_disabled, 'syntastic')
+call add(g:pathogen_disabled, 'Ultisnips')
+call add(g:pathogen_disabled, 'vim-airline')
 
 if v:version < '703' || !has('python')
     call add(g:pathogen_disabled, 'gundo')
@@ -116,12 +122,6 @@ if has("autocmd")
 
         autocmd bufwritepost .vimrc source $MYVIMRC
     augroup END
-
-    augroup templates
-        au!
-        au BufNewFile * if !(expand("%:p") =~? 'ipython_edit') | silent! 0r ~/.vim/templates/%:e | endif
-        au BufNewFile * if @% =~? 'pset' | silent! 0r ~/.vim/templates/pset | endif
-    augroup END
 else
     set autoindent
 endif
@@ -173,16 +173,6 @@ endif
 
 " fonts and colors
 syntax enable
-
-" set background=dark
-" colorscheme solarized
-
-" set background=light
-" colorscheme github
-
-colorscheme Tomorrow-Night-Bright
-
-" colorscheme gotham256
 
 hi clear SpellBad
 hi SpellBad cterm=underline
@@ -308,8 +298,10 @@ set noautochdir
 
 set lazyredraw
 
-set cursorline
-set cursorcolumn
+set nocursorline
+set nocursorcolumn
 
 " sentences should be separated by a period and ONE space when using gq
 set nojoinspaces
+
+colo base16-google-dark
