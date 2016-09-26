@@ -58,3 +58,6 @@
 [submodule "bundle/vim-seek"]
 	path = bundle/vim-seek
 	url = git://github.com/goldfeld/vim-seek.git
+[submodule "bundle/bundle/vim-tbone"]
+	path = bundle/bundle/vim-tbone
+	url = git://github.com/tpope/vim-tbone.git

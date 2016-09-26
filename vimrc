@@ -1,5 +1,5 @@
 if filereadable(expand("~/.vimrc_specific"))
-    " source ~/.vimrc_specific
+    source ~/.vimrc_specific
 endif
 
 " pathogen
